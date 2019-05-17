@@ -21,7 +21,7 @@
           </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav mr-auto float-left">
-              <a class="nav-item nav-link" href="index.php">Főoldal<span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="index.php">Kezdőlap<span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link active" href="felsok.php">Felsők</a>
               <a class="nav-item nav-link" href="nadragok.php">Nadrágok</a>
               <a class="nav-item nav-link" href="cipok.php">Cipők</a>
@@ -97,7 +97,7 @@
                 <div class="col-sm-3 pt-2 text-center">
                     <h5>Oldalak</h5>
                     <ul>
-                        <li><a href="index.php">Főoldal</a></li>
+                        <li><a href="index.php">Kezdőlap</a></li>
                         <li><a href="felsok.php">Felsők</a></li>
                         <li><a href="nadragok.php">Nadrágok</a></li>
                         <li><a href="cipok.php">Cipők</a></li>

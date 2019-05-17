@@ -6,10 +6,10 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-	<title>Dream Dress Kezdőoldal</title>
+	<title>Dream Dress Kezdőlap</title>
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
   <link rel="stylesheet" type="text/css" href="css/footer.css">
-</head>dsfsdfdsf
+</head>
 <body>
 	<div class="container">
 	<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light ">
@@ -19,7 +19,7 @@
           </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav mr-auto float-left">
-              <a class="nav-item nav-link active" href="index.php">Kezdőoldal<span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link active" href="index.php">Kezdőlap<span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link" href="felsok.php">Felsők</a>
               <a class="nav-item nav-link" href="nadragok.php">Nadrágok</a>
               <a class="nav-item nav-link" href="cipok.php">Cipők</a>
@@ -154,7 +154,7 @@
                 <div class="col-sm-3 pt-2 text-center">
                     <h5>Oldalak</h5>
                     <ul>
-                        <li><a href="index.php">Kezdőoldal</a></li>
+                        <li><a href="index.php">Kezdőlap</a></li>
                         <li><a href="felsok.php">Felsők</a></li>
                         <li><a href="nadragok.php">Nadrágok</a></li>
                         <li><a href="cipok.php">Cipők</a></li>
