@@ -9,7 +9,7 @@
 	<title>Dream Dress - Főoldal</title>
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
   <link rel="stylesheet" type="text/css" href="css/footer.css">
-</head>
+</head>dsfsdfdsf
 <body>
 	<div class="container">
 	<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light ">
