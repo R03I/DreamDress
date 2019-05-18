@@ -100,7 +100,6 @@ $(function(){
     });
 	//LOGOUT
 	$('#logout').click(function(event){
-        console.log("ASD");
 		$.ajax({
         type:'POST',
         url: 'php/ajax.php',
@@ -109,7 +108,6 @@ $(function(){
         },
         dataType:"TEXT",
         success:function(data3) {
-            console.log(data3);
         	$("#user_acc_name").html("");
         	$("#reg_log_menu").show();
         	$("#account_menu").addClass("d-none");

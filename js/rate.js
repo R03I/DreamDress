@@ -24,7 +24,6 @@ $(function(){
 	});
 
 	$("#comment_send").on("click", function(){
-
 			var nev_mutat;
 			if($("#checkbox").is(':checked')){
 				nev_mutat=1;
@@ -51,8 +50,23 @@ $(function(){
 					username_comm: $("#user_acc_name").html()
 				},
 				success:function() {
+					var nev_megjelenit;
+					if(nev_mutat==0){
+						nev_megjelenit = $("#user_acc_name").html();
+					}else{
+						nev_megjelenit = "Anonimus";
+					}
         			$("#elkuldve").removeClass("d-none");
         			$("#kommenteles").addClass("d-none");
+        			$("#uj_comment").html(
+        				$("#uj_comment").html()+
+        				"<div class=\"col-lg-12\">"+
+						"<p class=\"lead font-weight-bold\">"
+						+ nev_megjelenit +"<span class=\"float-right\">" + $("#ertekeles").val() + "/5</span></p>" +
+						"<p class=\"rounded\">" + $("#szoveg_tartalom").val() +"</p>" +
+						"<hr>" +
+						"</div>"
+        			);
         			setTimeout(function () {
             			$("#elkuldve").addClass("d-none");
         			}, 5000);

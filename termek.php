@@ -23,7 +23,7 @@
           <div class="navbar-nav mr-auto float-left">
               <a class="nav-item nav-link" href="index.php">Kezdőlap<span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link" href="felsok.php">Felsők</a>
-              <a class="nav-item nav-link active" href="nadragok.php">Nadrágok</a>
+              <a class="nav-item nav-link " href="nadragok.php">Nadrágok</a>
               <a class="nav-item nav-link" href="cipok.php">Cipők</a>
           </div>
           <div class="navbar-nav ml-auto float-right">
@@ -73,14 +73,14 @@
       <div class=\"col-lg-6 text-center\">
         <p class=\"lead\">Termék ponzotása (<span id=\"pontozas\">3</span>/5)</p>
         <input type=\"range\" class=\"form-control\" id=\"ertekeles\" min=\"1\" max=\"5\">
-        <p class=\"lead\"><input type=\"checkbox\" id=\"neve\"> Szeretné hogy a véleménye névtelenül jelenjen meg?</p>
+        <input type=\"checkbox\" id=\"checkbox\"> <span class=\"lead\">Szeretné hogy a véleménye névtelenül jelenjen meg?</span></p>
         <button id=\"comment_send\" value=\"$id\" class=\"btn btn-info form-control\">Küldés</button>
       </div>
     </div>";
   }
 ?>
 <hr class="mt-5 d-lg-none">
-<div class="row mt-5">
+<div class="row mt-5" id="uj_comment">
   <div class="col-12">
     <h4 class="text-center mb-5">Értékelések</h4>
   </div>
