@@ -16,7 +16,7 @@ $(function(){
 	});
 
 	$('#ertekeles').on("change mousemove", function() {
-	    $(pontozas).html($(this).val());
+		$(pontozas).html($(this).val());
 	});
 
 	$("#comment_send").click(function(){
@@ -24,6 +24,13 @@ $(function(){
 	});
 
 	$("#comment_send").on("click", function(){
+
+			var nev_mutat;
+			if($("#checkbox").is(':checked')){
+				nev_mutat=1;
+			}else{
+				nev_mutat=0;
+			}
 		if($("#szoveg_tartalom").val()==""){
 			$("#szoveg_tartalom").addClass("border border-danger");	
 			$("#ures_a_cucc").popover("show");
@@ -31,12 +38,6 @@ $(function(){
             	$("#ures_a_cucc").popover('hide');
         	}, 3000);
 		}else{
-			var nev_mutat;
-			if($("#neve").checked){
-				var nev_mutat=1;
-			}else{
-				var nev_mutat=0;
-			}
 			$.ajax({
 				url: 'php/ajax.php',
 				type: 'POST',
