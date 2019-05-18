@@ -10,8 +10,6 @@
       echo "0";
     }
   }
-  
-
   if(isset($_POST['item_src']))
   {
     $_SESSION['name'][]=$_POST['item_name'];

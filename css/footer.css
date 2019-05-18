@@ -91,3 +91,6 @@
 .ruha:hover{
 	cursor: zoom-in;
 }
+a:hover{
+    text-decoration: none;
+}
