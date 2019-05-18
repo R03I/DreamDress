@@ -15,7 +15,9 @@
 			return $array;
 		}
 		function termek_megjelenit($array){
-			echo "<div class=\"row mt-5\">";
+			require("rate.php");
+			$rate = new rate();
+			echo "<div class=\"row mt-3\">";
 			foreach ($array as $key => $value) {
 				$item = "item".$value[0];
 				echo
@@ -26,8 +28,9 @@
       </div>
       <div class=\"col-lg-6 text-center\">
         <h3 class=\"mt-5\">". $value[1] ."</h3>
-        <h4 class=\"mt-3\">Ára:". $value[4] ."Ft </h4>
-        <p class=\"lead text-justify mt-3\">Angolul straight leg a hivatalos neve, ez az egyik olyan szabás, ami szinte mindenkinek jól áll. Csípőn-fenéken szorosabb szabású, térdig kényelmesen követi a a test vonalát, de nem túl szűk. Térdtől ugyanazt a szélességet hozza, innen az elnevezés is.</p>".
+        <p class=\"lead text-justify mt-3\">".$value[6]."</p>".
+        "<h5 class=\"mt-3\">Ára : ". $value[4] ."Ft </h5>".
+        "<h5 class=\"mt-3\">Értékelése : ". $rate->pont($value[0]) ."/5.00 </h5>".
 				"<button  type=\"button\" id=\"$item._button\" onclick=\"cart('$item')\" value=\"$value[4]\" class=\"btn btn-dark ruha form-control mt-3\">Kosárba</button>".
 				"</div>
 				<input type=\"hidden\" id=\"$item._name\" value=\"$value[1]\">
@@ -37,16 +40,3 @@
 		}
 	}
 ?>
-
-
-<div class="row mt-5">
-      <div class="col-lg-6">
-        <img class="w-100 img-thumbnail" src="img/alsok/farmer.jpg">
-      </div>
-      <div class="col-lg-6 text-center">
-        <h3 class="mt-5"> Hosszú női farmer </h3>
-        <h4 class="mt-3">Ára: 4500 Ft </h4>
-        <p class="lead text-justify mt-3">Angolul straight leg a hivatalos neve, ez az egyik olyan szabás, ami szinte mindenkinek jól áll. Csípőn-fenéken szorosabb szabású, térdig kényelmesen követi a a test vonalát, de nem túl szűk. Térdtől ugyanazt a szélességet hozza, innen az elnevezés is.</p>
-        <button class="btn btn-dark mt-3 form-control">KOSÁRBA</button>
-      </div>
-    </div>

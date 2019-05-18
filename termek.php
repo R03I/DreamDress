@@ -43,6 +43,7 @@
     <strong>Sikeresen kiléptél.</strong> Várunk vissza <strong id="bye"></strong>.
     </div>
     <?php
+    session_start();
     if(isset($_GET['termek'])){
       require("php/dbconn.php");
       require("php/termek_mutat.php");
@@ -52,12 +53,49 @@
       header("location: index.php");
     }
 ?>
+
+<?php
+  if(isset($_SESSION['logged'])){
+    $id = $_GET['termek'];
+    echo "
+    <div id=\"elkuldve\" class=\"alert alert-success text-center w-100 d-none mt-5\">
+        <strong>Sikeresen elküldve</strong> Sikeresen elküldted a véleményed már a többiek kommentje között meg is találhatod.</strong>
+      </div>
+    <div id=\"kommenteles\" class=\"row mt-5\">
+      <div class=\"col-lg-12 mb-3\">
+      <hr class=\"d-lg-none\">
+        <p class=\"h4 text-center mt-5 \">Írja meg véleményét a termékről</p>
+      </div>
+      <div class=\"col-lg-6\">
+      <a href=\"#\" id=\"ures_a_cucc\" rel=\"popover\" data-placement=\"left\" data-content=\"Ha kommentet szeretne írni kötelező a mezőt kitöltni\" data-original-title=\"Nem lehet üres\"></a>
+      <textarea id=\"szoveg_tartalom\" style=\"resize:none\" class=\"form-control w-100 h-100\" maxlength=\"500\" rows=\"7\" placeholder=\"Ide írhatja véleményét a termékkel kapcsolatban...\"></textarea>
+      </div>
+      <div class=\"col-lg-6 text-center\">
+        <p class=\"lead\">Termék ponzotása (<span id=\"pontozas\">3</span>/5)</p>
+        <input type=\"range\" class=\"form-control\" id=\"ertekeles\" min=\"1\" max=\"5\">
+        <p class=\"lead\"><input type=\"checkbox\" id=\"neve\"> Szeretné hogy a véleménye névtelenül jelenjen meg?</p>
+        <button id=\"comment_send\" value=\"$id\" class=\"btn btn-info form-control\">Küldés</button>
+      </div>
+    </div>";
+  }
+?>
+<hr class="mt-5 d-lg-none">
+<div class="row mt-5">
+  <div class="col-12">
+    <h4 class="text-center mb-5">Értékelések</h4>
+  </div>
+  <?php
+  $rate = new rate();
+  $rate->komment_kiiras($rate->komment_lekeres($_GET['termek']));
+  ?>
+</div>
     <!-- FOOTER -->
       <footer id="myFooter" class="mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 text-center pt-5 my-0">
                     <a href="index.php"><i class="display-1 fab fa-deploydog"></i></a>
+                    <p class="small text-center text-light">#DreamDress</p>
                 </div>
                 <div class="col-sm-3 pt-2 text-center">
                     <h5>Oldalak</h5>
@@ -377,5 +415,6 @@
   <script type="text/javascript" src="js/re_password.js"></script>
   <script type="text/javascript" src="js/address_settings.js"></script>
   <script type="text/javascript" src="js/lightbox.js"></script>
+  <script type="text/javascript" src="js/rate.js"></script>
   <link rel="stylesheet" type="text/css" href="css/lightbox.css">
 </html>

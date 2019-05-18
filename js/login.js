@@ -100,25 +100,26 @@ $(function(){
     });
 	//LOGOUT
 	$('#logout').click(function(event){
+        console.log("ASD");
 		$.ajax({
-		async:false,
         type:'POST',
         url: 'php/ajax.php',
         data: {
-            destory: ""
+            destory: "asdasd"
         },
         dataType:"TEXT",
         success:function(data3) {
+            console.log(data3);
         	$("#user_acc_name").html("");
         	$("#reg_log_menu").show();
         	$("#account_menu").addClass("d-none");
         	$("#logout").addClass("d-none");
         	$("#bye").html(data3);
         	$("#goodbye").removeClass("d-none");
-        	setTimeout(function () {
-            $("#goodbye").addClass("d-none");
-        	}, 3000);
-        }
-    });
+        	   setTimeout(function () {
+                $("#goodbye").addClass("d-none");
+        	   }, 3000);
+            }
+        });
 	});
 	});

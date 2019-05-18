@@ -8,7 +8,7 @@ class dbConnection{
 
 	public function __construct(){
 		$this->host="localhost";
-		$this->dbname="webshop";
+		$this->dbname="szakalla_webshop";
 		$this->username="root";
 		$this->password="";
 	}

@@ -15,7 +15,7 @@
 			echo false;
 		}
 	}
-	if(isset($_POST["destroy"])){
+	if(isset($_POST["destory"])){
 		$name = $_SESSION['logged']; 
 		unset($_SESSION['logged']);
 		echo $name;
@@ -66,8 +66,21 @@
 	}
 	if(isset($_POST['emailpost'])){
 		require("dbconn.php");
-		require("SendMailScript.js");
+		require("SendMailScript.php");
 		$mail_send = new mail_send($_POST['emailpost'] , "Sikeres felíratkozás", "Sikeresen felíratkozott hírlevelünkre hetente értesítjük önt friss híreinkről ehavi kupon kódunk LOWPRICE", "Content-Type: text/html; charset=UTF-8");
 		$mail_send->send_mail();
+	}
+	if(isset($_POST['rate']) && isset($_POST['id']) && isset($_POST['comment']) && isset($_POST['anonim']) && isset($_POST['username_comm'])){
+		require("dbconn.php");
+		require("rate.php");
+		$rate = new rate();
+		$rate->feltolt($rate->user_id($_POST['username_comm']), $_POST['id'], $_POST['comment'], $_POST['anonim'], $_POST['rate']);
+		echo $rate->user_id($_POST['username_comm']);
+	}
+	if(isset($_POST['username_id_comment_show']) && isset($_POST['item_id_comment_show'])){
+		require("dbconn.php");
+		require("rate.php");
+		$rate = new rate();
+		echo json_encode($rate->egyezik($rate->user_id($_POST['username_id_comment_show']),$_POST['item_id_comment_show']));
 	}
 ?>
